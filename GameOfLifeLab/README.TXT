@@ -1,4 +1,4 @@
-Introduction
+﻿Introduction
 
 The goal of this lab is to apply your understanding of decision and loop
 	structures to implement a complex algorithm within the context of an
@@ -39,7 +39,27 @@ Nonfunctional Requirements:
 	generations. It will be easier to implement the unit test if you directly
 	produce and display subsequent generations.
 
-
+My Requirements:
+*10*10 grid
+*live cells-rock
+*dead cells-empty
+*Start state:
+      0  1  2  3  4  5  6  7  8  9
+*  0  X  -  -  -  X  X  -  -  -  X 
+*  1  X  -  -  -  -  X  -  -  -  X
+*  2  X  -  -  -  -  -  -  -  -  X
+*  3  -  -  -  -  -  -  -  -  -  -
+*  4  X  X  -  -  X  X  -  -  -  X
+*  5  x  -  -  -  X  X  -  -  X  X
+*  6  -  -  -  -  -  -  -  -  -  -
+*  7  X  -  -  -  -  -  -  -  -  X
+*  8  X  -  -  -  X  -  -  -  -  X
+*  9  X  -  -  -  X  X  -  -  -  X
+ 
+* runs for 19 generations
+* 200 ms between generations
+* locations past the edge are not valid
+* 
 Artifacts to Produce:
 
 * Requirements Document: Many functional and nonfunctional requirements needs

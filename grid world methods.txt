@@ -1,0 +1,35 @@
+getOccupiedAdjacentLocations
+
+ArrayList<Location> getOccupiedAdjacentLocations(Location loc)
+Gets the valid occupied locations adjacent to a given location in all eight compass directions (north, northeast, east, southeast, south, southwest, west, and northwest). 
+Precondition: loc is valid in this grid
+Parameters:
+loc - a location in this grid
+Returns:
+an array list of the valid occupied locations adjacent to locÂ in this grid grid
+
+
+
+remove
+
+E remove(Location loc)
+Removes the object at a given location from this grid. 
+Precondition: loc is valid in this grid
+Parameters:
+loc - the location of the object that is to be removed
+Returns:
+the object that was removed (or null if the location is unoccupied)
+
+
+
+put
+
+E put(Location loc,
+      E obj)
+Puts an object at a given location in this grid. 
+Precondition: (1) loc is valid in this grid (2) obj is not null
+Parameters:
+loc - the location at which to put the object
+obj - the new object to be added
+Returns:
+the object previously at loc (or null if the location was previously unoccupied)
