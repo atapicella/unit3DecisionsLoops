@@ -33,3 +33,10 @@ loc - the location at which to put the object
 obj - the new object to be added
 Returns:
 the object previously at loc (or null if the location was previously unoccupied)
+
+getOccupiedLocations
+
+ArrayList<Location> getOccupiedLocations()
+Gets the locations in this grid that contain objects.
+Returns:
+an array list of all occupied locations in this grid

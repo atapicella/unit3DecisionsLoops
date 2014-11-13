@@ -60,6 +60,7 @@ public class GameOfLife
     public GameOfLife()
     {
         // create the grid, of the specified size, that contains Actors
+        
         BoundedGrid<Actor> grid = new BoundedGrid<Actor>(ROWS, COLS);
         
         // create a world based on the grid
@@ -98,6 +99,106 @@ public class GameOfLife
         Rock rock3 = new Rock();
         Location loc3 = new Location(X3, Y3);
         grid.put(loc3, rock3);
+        
+        Rock rock4 = new Rock();
+        Location loc4 = new Location(X4, Y4);
+        grid.put(loc4, rock4);
+        
+        Rock rock5 = new Rock();
+        Location loc5 = new Location(X5, Y5);
+        grid.put(loc5, rock5);
+        
+        Rock rock6 = new Rock();
+        Location loc6 = new Location(X6, Y6);
+        grid.put(loc6, rock6)
+        
+        Rock rock7 = new Rock();
+        Location loc7 = new Location(X7, Y7);
+        grid.put(loc7, rock7);
+        
+        Rock rock8 = new Rock();
+        Location loc8 = new Location(X8, Y8);
+        grid.put(loc8, rock8);
+        
+        Rock rock9 = new Rock();
+        Location loc9 = new Location(X9, Y9);
+        grid.put(loc9, rock9)
+        
+        Rock rock10 = new Rock();
+        Location loc10 = new Location(X10, Y10);
+        grid.put(loc10, rock10);
+        
+        Rock rock11 = new Rock();
+        Location loc11 = new Location(X11, Y11);
+        grid.put(loc11, rock11);
+        
+        Rock rock12 = new Rock();
+        Location loc12 = new Location(X12, Y12);
+        grid.put(loc12, rock12)
+        
+        Rock rock13 = new Rock();
+        Location loc13 = new Location(X13, Y13);
+        grid.put(loc13, rock13);
+        
+        Rock rock14 = new Rock();
+        Location loc14 = new Location(X14, Y14);
+        grid.put(loc14, rock14);
+        
+        Rock rock15 = new Rock();
+        Location loc15 = new Location(X15, Y15);
+        grid.put(loc15, rock15)
+        
+        Rock rock16 = new Rock();
+        Location loc16 = new Location(X16, Y16);
+        grid.put(loc16, rock16);
+        
+        Rock rock17 = new Rock();
+        Location loc17 = new Location(X17, Y17);
+        grid.put(loc17, rock17);
+        
+        Rock rock18 = new Rock();
+        Location loc18 = new Location(X18, X18);
+        grid.put(loc18, rock18)
+        
+        Rock rock19 = new Rock();
+        Location loc19 = new Location(X19, Y19);
+        grid.put(loc19, rock19);
+        
+        Rock rock20 = new Rock();
+        Location loc20 = new Location(X20, Y20);
+        grid.put(loc20, rock20);
+        
+        Rock rock21 = new Rock();
+        Location loc21 = new Location(X21, Y21);
+        grid.put(loc21, rock21)
+        
+        Rock rock22 = new Rock();
+        Location loc22 = new Location(X22, Y22);
+        grid.put(loc22, rock22);
+        
+        Rock rock23 = new Rock();
+        Location loc23 = new Location(X23, Y23);
+        grid.put(loc23, rock23)
+        
+        Rock rock24 = new Rock();
+        Location loc24 = new Location(X24, Y24);
+        grid.put(loc24, rock24);
+        
+        Rock rock25 = new Rock();
+        Location loc25 = new Location(X25, Y25);
+        grid.put(loc25, rock25)
+        
+        Rock rock26 = new Rock();
+        Location loc26 = new Location(X26, Y26);
+        grid.put(loc26, rock26);
+        
+        Rock rock27 = new Rock();
+        Location loc27 = new Location(X27, Y27);
+        grid.put(loc27, rock27)
+        
+        Rock rock28 = new Rock();
+        Location loc28 = new Location(X28, Y28);
+        grid.put(loc28, rock28)
     }
 
     /**
@@ -118,6 +219,16 @@ public class GameOfLife
         Grid<Actor> grid = world.getGrid();
         
         // insert magic here...
+        for (int row = 0; row<=14; row++)
+        {
+            for (int col = 0; col<=14; col++)
+            {
+                if (grid.getOccupiedAdjacentLocations(row, col).length==3)
+		{
+			
+            }
+            
+        }
         
     }
     
