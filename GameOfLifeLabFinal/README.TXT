@@ -56,9 +56,11 @@ My Requirements:
 *  8  X  -  -  -  X  -  -  -  -  X
 *  9  X  -  -  -  X  X  -  -  -  X
  
-* runs for 19 generations
-* 200 ms between generations
+* runs for 10 generations
+* 500 ms between generations
 * locations past the edge are not valid
+* bounded grid
+* user can place cells on grid and enters 1 in the terminal to start game
 * 
 Artifacts to Produce:
 

@@ -4,52 +4,54 @@ import info.gridworld.actor.Rock;
 import info.gridworld.grid.Grid;
 import info.gridworld.grid.BoundedGrid;
 import info.gridworld.grid.Location;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Game of Life starter code. Demonstrates how to create and populate the game using the GridWorld framework.
  * Also demonstrates how to provide accessor methods to make the class testable by unit tests.
  * 
- * @author @gcschmit
- * @version 18 July 2014
+ * @author @Andrew Apicella
+ * @version 14 Nov 2014
  */
 public class GameOfLife
 {
     // the world comprised of the grid that displays the graphics for the game
-    private ActorWorld world;
+    private static ActorWorld world;
     
-    // the game board will have 5 rows and 5 columns
-    private final int ROWS = 15;
-    private final int COLS = 15;
+    // the game board will have 10 rows and 10 columns
+    private final int ROWS = 10;
+    private final int COLS = 10;
     
     // constants for the location of the three cells initially alive
     private final int X1 = 0, Y1 = 0;
     private final int X2 = 0, Y2 = 4;
     private final int X3 = 0, Y3 = 5;
-    private final int X4 = 0, Y1 = 9;
-    private final int X5 = 1, Y2 = 0;
-    private final int X6 = 1, Y3 = 3;
-    private final int X7 = 1, Y1 = 4;
-    private final int X8 = 2, Y2 = 10;
-    private final int X9 = 2, Y3 = 11;
-    private final int X10 = 4, Y1 = 3;
-    private final int X11 = 4, Y2 = 4;
-    private final int X12 = 4, Y3 = 10;
-    private final int X13 = 4, Y1 = 11;
-    private final int X14 = 4, Y2 = 7;
-    private final int X15 = 5, Y3 = 0;
-    private final int X16 = 5, Y1 = 2;
-    private final int X17 = 5, Y2 = 6;
-    private final int X18 = 5, Y3 = 7;
-    private final int X19 = 5, Y1 = 8;
-    private final int X20 = 7, Y2 = 13;
-    private final int X21 = 7, Y3 = 14;
-    private final int X22 = 8, Y1 = 0;
-    private final int X23 = 8, Y2 = 5;
-    private final int X24 = 8, Y3 = 6;
-    private final int X25 = 9, Y1 = 7;
-    private final int X26 = 9, Y2 = 8;
-    private final int X27 = 9, Y3 = 9;
-    private final int X28 = 9, Y1 = 14;
+    private final int X4 = 0, Y4 = 9;
+    private final int X5 = 1, Y5 = 0;
+    private final int X6 = 1, Y6 = 5;
+    private final int X7 = 1, Y7 = 9;
+    private final int X8 = 2, Y8 = 0;
+    private final int X9 = 2, Y9 = 9;
+    private final int X10 = 4, Y10 = 0;
+    private final int X11 = 4, Y11 = 1;
+    private final int X12 = 4, Y12 = 4;
+    private final int X13 = 4, Y13 = 5;
+    private final int X14 = 4, Y14 = 9;
+    private final int X15 = 5, Y15 = 0;
+    private final int X16 = 5, Y16 = 4;
+    private final int X17 = 5, Y17 = 5;
+    private final int X18 = 5, Y18 = 8;
+    private final int X19 = 5, Y19 = 9;
+    private final int X20 = 7, Y20 = 0;
+    private final int X21 = 7, Y21 = 9;
+    private final int X22 = 8, Y22 = 0;
+    private final int X23 = 8, Y23 = 4;
+    private final int X24 = 8, Y24 = 9;
+    private final int X25 = 9, Y25 = 0;
+    private final int X26 = 9, Y26 = 4;
+    private final int X27 = 9, Y27 = 5;
+    private final int X28 = 9, Y28 = 9;
 
     /**
      * Default constructor for objects of class GameOfLife
@@ -81,7 +83,7 @@ public class GameOfLife
      * @post    all actors that comprise the initial state of the game have been added to the grid
      * 
      */
-    private void populateGame()
+    public void populateGame()
     {
         // the grid of Actors that maintains the state of the game
         //  (alive cells contains actors; dead cells do not)
@@ -110,7 +112,7 @@ public class GameOfLife
         
         Rock rock6 = new Rock();
         Location loc6 = new Location(X6, Y6);
-        grid.put(loc6, rock6)
+        grid.put(loc6, rock6);
         
         Rock rock7 = new Rock();
         Location loc7 = new Location(X7, Y7);
@@ -122,7 +124,7 @@ public class GameOfLife
         
         Rock rock9 = new Rock();
         Location loc9 = new Location(X9, Y9);
-        grid.put(loc9, rock9)
+        grid.put(loc9, rock9);
         
         Rock rock10 = new Rock();
         Location loc10 = new Location(X10, Y10);
@@ -134,7 +136,7 @@ public class GameOfLife
         
         Rock rock12 = new Rock();
         Location loc12 = new Location(X12, Y12);
-        grid.put(loc12, rock12)
+        grid.put(loc12, rock12);
         
         Rock rock13 = new Rock();
         Location loc13 = new Location(X13, Y13);
@@ -146,7 +148,7 @@ public class GameOfLife
         
         Rock rock15 = new Rock();
         Location loc15 = new Location(X15, Y15);
-        grid.put(loc15, rock15)
+        grid.put(loc15, rock15);
         
         Rock rock16 = new Rock();
         Location loc16 = new Location(X16, Y16);
@@ -157,8 +159,8 @@ public class GameOfLife
         grid.put(loc17, rock17);
         
         Rock rock18 = new Rock();
-        Location loc18 = new Location(X18, X18);
-        grid.put(loc18, rock18)
+        Location loc18 = new Location(X18, Y18);
+        grid.put(loc18, rock18);
         
         Rock rock19 = new Rock();
         Location loc19 = new Location(X19, Y19);
@@ -170,7 +172,7 @@ public class GameOfLife
         
         Rock rock21 = new Rock();
         Location loc21 = new Location(X21, Y21);
-        grid.put(loc21, rock21)
+        grid.put(loc21, rock21);
         
         Rock rock22 = new Rock();
         Location loc22 = new Location(X22, Y22);
@@ -178,7 +180,7 @@ public class GameOfLife
         
         Rock rock23 = new Rock();
         Location loc23 = new Location(X23, Y23);
-        grid.put(loc23, rock23)
+        grid.put(loc23, rock23);
         
         Rock rock24 = new Rock();
         Location loc24 = new Location(X24, Y24);
@@ -186,7 +188,7 @@ public class GameOfLife
         
         Rock rock25 = new Rock();
         Location loc25 = new Location(X25, Y25);
-        grid.put(loc25, rock25)
+        grid.put(loc25, rock25);
         
         Rock rock26 = new Rock();
         Location loc26 = new Location(X26, Y26);
@@ -194,11 +196,12 @@ public class GameOfLife
         
         Rock rock27 = new Rock();
         Location loc27 = new Location(X27, Y27);
-        grid.put(loc27, rock27)
+        grid.put(loc27, rock27);
         
         Rock rock28 = new Rock();
         Location loc28 = new Location(X28, Y28);
-        grid.put(loc28, rock28)
+        grid.put(loc28, rock28);
+        world.show();
     }
 
     /**
@@ -217,19 +220,58 @@ public class GameOfLife
         
         // create the grid, of the specified size, that contains Actors
         Grid<Actor> grid = world.getGrid();
-        
+        BoundedGrid<Actor> newGrid= new BoundedGrid<Actor>(10,10);
+        Rock rock = new Rock();
         // insert magic here...
-        for (int row = 0; row<=14; row++)
+        //Array to hold locations to put cell
+        Location[] put = new Location[100];
+         //Array to hold locations to remove cell
+        Location[] remove = new Location[100];
+        //number of times loops have run combined.  Used to set indeses of array
+        int index = 0;
+        for (int row = 0; row<=9; row++)
         {
-            for (int col = 0; col<=14; col++)
+            for (int col = 0; col<=9; col++)
             {
-                if (grid.getOccupiedAdjacentLocations(row, col).length==3)
-		{
-			
+                Location loc = new Location(row, col);
+                //iff cell is alive
+                if (getActor(row, col) != null)
+                {
+                    //if cell neighbors are less than two or more than 3
+                    if (grid.getOccupiedAdjacentLocations(loc).size()<2 || grid.getOccupiedAdjacentLocations(loc).size()>3)
+                    {
+                       //adds current location to array of cells to remove
+                       remove[index] =  new Location(row, col);
+                    }          
+                }
+                //if cell is dead
+                else
+                {
+                    //if dead cell has 3 neighbors
+                    if (grid.getOccupiedAdjacentLocations(loc).size()==3)
+                       {
+                           //adds current location to array of cells to put
+                           put[index] = new Location(row, col);
+                        }
+                    }   
+                index++;
             }
-            
         }
-        
+        for (int i = 0; i<=put.length && i<=remove.length; i++)
+        {
+            //if put at index i is not null
+            if (i<put.length && put[i] != null)
+            {
+                //put rock at location put[i]
+                 grid.put(put[i], rock);                
+             }
+             //if remove at index i is not null
+            if (i<remove.length && remove[i] != null)
+            {
+                //remove cell at location remove[i]
+                 grid.remove(remove[i]);
+             }
+        }
     }
     
     /**
@@ -268,13 +310,29 @@ public class GameOfLife
     }
     
     
+   
     /**
      * Creates an instance of this class. Provides convenient execution.
      *
      */
     public static void main(String[] args)
+        throws InterruptedException
     {
         GameOfLife game = new GameOfLife();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Right click and place rocks where you would like.");
+        int ready = 0;
+        while (ready != 1)
+        {
+            System.out.println("When you are ready to start enter 1");
+            ready = scan.nextInt();
+        }
+        //runs 10 times
+        for (int i = 0; i<=9; i++)
+        {
+           Thread.sleep(500);
+           game.createNextGeneration();
+           world.show();
+        }
     }
-
 }
